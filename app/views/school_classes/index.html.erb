@@ -1,0 +1,7 @@
+<h1>SCHOOL CLASS</h1>
+
+<% if @school_classes && @school_classes.length > 0 %>
+  <% @school_classes.each do |s|%>
+  <li><%=link_to  s.title, s %></li>
+  <%end%>
+<%end%>
