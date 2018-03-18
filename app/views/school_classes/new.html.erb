@@ -1,0 +1,23 @@
+<!-- # :school_class => { :title => "Computer Science", :room_number => 5 -->
+
+<!-- < %=form_for(@school_class) do |f| %>
+< %=f.label :title%>
+< %=f.text_field :title%>
+< %=f.label :room_number%>
+< %=f.text_field :room_number%>
+< %= f.submit%>
+< %end%> -->
+School Class Form
+
+<%= form_tag school_classes_path do%>
+  <label for=""> Class title:</label><br>
+  <!-- <input type="text" id="post_title" name="post[title]" value=""><br> replaced by text_field_tag-->
+  <%= text_field_tag :'school_class[title]'%> <br>
+  <label for=""> Room Number:</label><br>
+  <!-- <input type="text" id="post_description" name="post[description]" value=""><br> replace by text_field_tag-->
+  <%= text_field_tag :'school_class[room_number]'%> <br> <!--sets id="post_description" and  name="post[description]" without being told to-->
+  <!-- <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">  replaced by rail's hidden_field_tag-->
+  <!-- < %= hidden_field_tag :authenticity_token, form_authenticity_token% > form_tag handles this so not needed to add-->
+  <input type="submit"  value="Create School class">
+<!-- </form>  before form_tag via ActionView-->
+<%end%>

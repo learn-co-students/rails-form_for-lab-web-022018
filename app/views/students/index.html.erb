@@ -1,0 +1,9 @@
+<h1>Students</h1>
+<%= @test %> <br>
+<% if @students && @students.length > 0 %>
+  <% @students.each do |s|%>
+  <!-- < %= s.to_s%> #undefined method `+' for nil:NilClass -->
+  <!-- <li><a href="student_path(s.id)"> <%= s.first_name%> <%= s.last_name%> </a></li> -->
+  <li><%=link_to  s.to_s, s %></li>
+  <%end%>
+<%end%>
